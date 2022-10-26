@@ -1,0 +1,35 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:th="http://thymeleaf.org">
+  <section id="hero" style="background-color: #FFFEFB;">
+    <div id="homepage">
+      <hr>
+      <h2 style="text-align: center" id="title">Weather in Bitola</h2>
+      <hr>
+    </div>
+  </section>
+
+  <div class="container mb-4">
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-dark" style="text-align: center">
+          <tr style="text-align: center">
+            <th scope="col">City</th>
+            <th scope="col">Date</th>
+            <th scope="col">Temperature</th>
+            <th scope="col">Weather</th>
+          </tr>
+          </thead>
+          <tbody style="text-align: center">
+          <tr th:each="day : ${dataBitola}">
+            <td th:text="${day.city}"></td>
+            <td th:text="${day.date}"></td>
+            <td th:text="${day.maxTemperature}"></td>
+            <td th:text="${day.main}"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
